@@ -91,7 +91,6 @@ contract TRC20 is ITRC20, Pausable {
         uint256 value
     ) public whenNotPaused returns (bool) {
         _allowed[from][msg.sender] = _allowed[from][msg.sender].sub(value);
-        _transfer(from, to, value);
         return true;
     }
 
